@@ -19,10 +19,19 @@
     <section id="events">
       <h2>Events in Action</h2>
       <button v-on:click="incrementCounter(10)">Add</button>
-      <button v-on:click="decrementCounter(5)">Remove</button>
+      <button v-on:click.right="decrementCounter(5)">Remove</button>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName($event, 'Gerard')">
-      <p>Your name: {{ name }}</p>
+      <input type="text" v-on:input="setName($event, 'Gerard')" v-on:keyup.enter="confirmInput">
+      <p>Your name: {{ confirmedName }}</p>
+      <form v-on:submit="submitForm">
+        <input type="text" />
+        <button>Sign up</button>
+      </form>
+      <hr/>
+      <form v-on:submit.prevent="submitForm2">
+        <input type="text" />
+        <button>Sign up</button>
+      </form>
     </section>
   </body>
 </html>
