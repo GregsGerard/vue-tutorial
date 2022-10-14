@@ -53,6 +53,9 @@ console.log(proxy);
 
 
 const app2 = Vue.createApp({
+  template: `
+  <p>{{ favoriteMeal }}</p>
+  `,
   data() {
     return {
       favoriteMeal: 'Pizza'
