@@ -36,6 +36,17 @@ export default {
       // validator: (value) => value === '1' || value === '0',
     },
   },
+  // emits: ['toggle-favorite'],
+  emits: {
+    'toggle-favorite': function (id) {
+      if (id){
+        return true;
+      } else {
+        console.log('Id is missing!');
+        return false;
+      }
+    },
+  },
   data() {
     return {
       detailsVisible: false,
